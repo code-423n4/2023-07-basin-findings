@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "8olidity",
+  "risk": "2",
+  "title": "`getSymbol()` cannot get contract information",
+  "issueId": 4,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/4"
+}
