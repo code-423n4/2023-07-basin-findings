@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "erebus",
+  "risk": "3",
+  "title": "Memory overwrite in init arguments",
+  "issueId": 6,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/6"
+}
