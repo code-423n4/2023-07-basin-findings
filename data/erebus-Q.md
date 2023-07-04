@@ -1,0 +1,1 @@
+Useless modifier in consructor [here](https://github.com/code-423n4/2023-07-basin/blob/c1b72d4e372a6246e0efbd57b47fb4cbb5d77062/src/Aquifer.sol#L19) (even the constructor is empty, just why the modifier there, it makes no sense)
