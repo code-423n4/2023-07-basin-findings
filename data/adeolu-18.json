@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "adeolu",
+  "risk": "2",
+  "title": "precision error/rounding issue in readUint128() of LibBytes.sol ",
+  "issueId": 18,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/18"
+}
