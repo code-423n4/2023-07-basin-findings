@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "erebus",
+  "risk": "3",
+  "title": "Critical slots being overwritten by bad designed _getSlotForAddress function",
+  "issueId": 16,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/16"
+}
