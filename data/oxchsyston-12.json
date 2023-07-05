@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "oxchsyston",
+  "risk": "2",
+  "title": "User balance was not updated during minting and burning",
+  "issueId": 12,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/12"
+}
