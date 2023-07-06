@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xkazim",
+  "risk": "2",
+  "title": "returns of bytes32 as name not handling in `getName` function",
+  "issueId": 34,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/34"
+}
