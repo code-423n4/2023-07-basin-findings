@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "ziyou-",
+  "risk": "2",
+  "title": "Not checking whether iToken and jToken are the same token leads to unexpected situations.",
+  "issueId": 21,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/21"
+}
