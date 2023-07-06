@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xkazim",
+  "risk": "3",
+  "title": "check missed in the `_swapFrom` to prevent sending tokens to the reserves directly and cause bad cases happen",
+  "issueId": 33,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/33"
+}
