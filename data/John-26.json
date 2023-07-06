@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "John",
+  "risk": "2",
+  "title": "The `swapTo` function in `Well.sol` is susceptible to underflow occurrences.",
+  "issueId": 26,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/26"
+}
