@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xkazim",
+  "risk": "3",
+  "title": "the function `swapTo` did not work as expected ",
+  "issueId": 65,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/65"
+}
