@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "ro1sharkm",
+  "risk": "3",
+  "title": " Lack of Validation in Aquifer Contract's boreWell Function for Implementation Address",
+  "issueId": 45,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/45"
+}
