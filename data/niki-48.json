@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "niki",
+  "risk": "2",
+  "title": "USDC and USDT have 6 decimals, but on other chains have 18 decimals",
+  "issueId": 48,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/48"
+}
