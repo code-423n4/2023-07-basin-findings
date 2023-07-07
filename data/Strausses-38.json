@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Strausses",
+  "risk": "3",
+  "title": "Not checking values after performing swap",
+  "issueId": 38,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/38"
+}
