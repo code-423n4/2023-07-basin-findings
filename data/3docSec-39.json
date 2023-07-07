@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "3docSec",
+  "risk": "2",
+  "title": "ERC-20 other than the well's supported ones can't be rescued",
+  "issueId": 39,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/39"
+}
