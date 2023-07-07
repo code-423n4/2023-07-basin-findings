@@ -1,3 +1,5 @@
+
+1.
 In well.so init function.
 
 There are nested for loops that determine if there are duplicate elements in the array.
@@ -26,3 +28,59 @@ It can be replaced with a more efficient algorithm with O(n) time complexity:
             return false;
         }
 ```
+
+2.
+Add a break to the for in the _getIJ function in well.sol.
+
+before:
+```
+function _getIJ(
+        IERC20[] memory _tokens,
+        IERC20 iToken,
+        IERC20 jToken
+    ) internal pure returns (uint256 i, uint256 j) {
+        bool foundI = false;
+        bool foundJ = false;
+
+        for (uint256 k; k < _tokens.length; ++k) {
+            if (iToken == _tokens[k]) {
+                i = k;
+                foundI = true;
+            } else if (jToken == _tokens[k]) {
+                j = k;
+                foundJ = true;
+            }
+        }
+
+        if (!foundI) revert InvalidTokens();
+        if (!foundJ) revert InvalidTokens();
+    }
+```
+
+after:
+```
+    function _getIJ(
+        IERC20[] memory _tokens,
+        IERC20 iToken,
+        IERC20 jToken
+    ) internal pure returns (uint256 i, uint256 j) {
+        bool foundI = false;
+        bool foundJ = false;
+
+        for (uint256 k; k < _tokens.length; ++k) {
+            if (iToken == _tokens[k]) {
+                i = k;
+                foundI = true;
+            } else if (jToken == _tokens[k]) {
+                j = k;
+                foundJ = true;
+            } else if (foundI && foundJ) {  // <---add break
+                break;
+            }
+        }
+
+        if (!foundI) revert InvalidTokens();
+        if (!foundJ) revert InvalidTokens();
+    }
+```
+
