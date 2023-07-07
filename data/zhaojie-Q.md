@@ -1,5 +1,5 @@
 
-1.In well.sol init function,use more efficient algorithms.
+### 1.In well.sol init function,use more efficient algorithms.
 
 There are nested for loops that determine if there are duplicate elements in the array.
 Time complexity is O(n^2).
@@ -28,7 +28,7 @@ It can be replaced with a more efficient algorithm with O(n) time complexity:
         }
 ```
 
-2.Add a break to the for in the _getIJ function in well.sol.
+### 2.Add a break to the for in the _getIJ function in well.sol.
 
 before:
 ```
