@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "zaevlad",
+  "risk": "2",
+  "title": "Tokens can stuck in the contract if user will supply only one token type for initial call \"addLiquidity\"",
+  "issueId": 50,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/50"
+}
