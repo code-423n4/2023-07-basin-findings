@@ -1,9 +1,9 @@
 ### Non-Critical Issues List
 | Number |Issues Details|Context|
 |:--:|:-------|:--:|
-| [N-01] |In `Well.sol init function`,use more efficient algorithms.| 1 |
-| [N-02] |Add a break to the for in the `_getIJ` function in `Well.sol`.|1|
-| [N-03] |Array length not checked. |2|
+| [L-01] |In `Well.sol init function`,use more efficient algorithms.| 1 |
+| [L-02] |Add a break to the for in the `_getIJ` function in `Well.sol`.|1|
+| [L-03] |Array length not checked. |2|
 
 Total 3 issues
 
