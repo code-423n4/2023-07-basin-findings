@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "oakcobalt",
+  "risk": "3",
+  "title": "Users can bypass reserve update to MultiFlowPump by directly trading through shift()",
+  "issueId": 57,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/57"
+}
