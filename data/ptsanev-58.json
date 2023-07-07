@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "ptsanev",
+  "risk": "2",
+  "title": "Well.sol#_addLiquidity - user can accidentally add wrong liquidity amounts and be forced to redo his tx",
+  "issueId": 58,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/58"
+}
