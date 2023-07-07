@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "niki",
+  "risk": "2",
+  "title": "A malicious user can call boreWell() function with wrong input and skip the If-s",
+  "issueId": 49,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/49"
+}
