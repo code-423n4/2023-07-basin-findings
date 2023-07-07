@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xkazim",
+  "risk": "2",
+  "title": "mismatching in the indexes may cause the function `removeLiquidty` to act strange or even revert",
+  "issueId": 62,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/62"
+}
