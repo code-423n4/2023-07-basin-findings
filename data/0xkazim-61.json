@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xkazim",
+  "risk": "3",
+  "title": "attacker can swap zero amount of token A to get some amount of token B",
+  "issueId": 61,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/61"
+}
