@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "kaveyjoe",
+  "risk": "2",
+  "title": " Incorrect Calculation of Reserve in ConstantProduct2's calcReserve Function",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/71"
+}
