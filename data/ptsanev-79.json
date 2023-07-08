@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "ptsanev",
+  "risk": "3",
+  "title": "Well.sol - flashloan liquidity manipulation can lead to a DoS of user transactions and potential drainage of pool tokens",
+  "issueId": 79,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/79"
+}
