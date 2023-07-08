@@ -75,7 +75,7 @@ we recheck in init function.
          // If there is a change in token balances relative to the currently
          // stored reserves, the extra tokens can be shifted into `tokenOut`.
 -        for (uint256 i; i < _tokens.length; ++i) {
-+        for (uint256 i; i < __tokenslength; ++i) {
++        for (uint256 i; i < _tokenslength; ++i) {
              reserves[i] = _tokens[i].balanceOf(address(this));
          }
 ```
