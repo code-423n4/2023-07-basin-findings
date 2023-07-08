@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "JGcarv",
+  "risk": "2",
+  "title": "`ConstantProduct2` functions don't enforce reserve arrays with length 2.",
+  "issueId": 84,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/84"
+}
