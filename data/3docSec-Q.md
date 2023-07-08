@@ -1,0 +1,3 @@
+- As the "sync" function increases reserves, you may consider having it issue LP tokens too. As it is, the LP tokens not minted by the "sync" function will be minted and assigned to the lucky first user adding liquidity
+
+- Consider declaring "Clone" and "ClonePlus" functions as "view" and not "pure". This may be a required step choice on [future versions of solidity](https://github.com/ethereum/solidity/issues/12260)
