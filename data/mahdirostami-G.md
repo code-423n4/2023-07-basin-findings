@@ -1,6 +1,4 @@
-https://code4rena.com/contests/2023-07-basin#basin-contest-details
-* * *
-## 1. Avoid extra computation by the first checking if.
+## 1. Avoid extra computation by first checking if.
 By first checking input values, avoid extra computation.
 
 Instances 10:
