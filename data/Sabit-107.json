@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Sabit",
+  "risk": "3",
+  "title": "ProportionalLPToken2.calcLPTokenUnderlying will throw error when called because of incomplete interface implementation",
+  "issueId": 107,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/107"
+}
