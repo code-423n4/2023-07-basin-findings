@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "adeolu",
+  "risk": "2",
+  "title": "possible div by zero error in calcLPTokenUnderlying() of ProportionalLPToken2.sol ",
+  "issueId": 130,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/130"
+}
