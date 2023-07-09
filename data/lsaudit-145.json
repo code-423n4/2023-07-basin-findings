@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "lsaudit",
+  "risk": "3",
+  "title": "Potential draining Well via slippage imprecision and swapping the same token",
+  "issueId": 145,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/145"
+}
