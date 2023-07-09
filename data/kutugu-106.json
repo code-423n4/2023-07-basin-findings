@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "kutugu",
+  "risk": "3",
+  "title": "A malicious user can use swapTo to run out of the well",
+  "issueId": 106,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/106"
+}
