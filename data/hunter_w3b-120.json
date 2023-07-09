@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "hunter_w3b",
+  "risk": "3",
+  "title": "wrong Implementations in ConstantProduct2.sol::calcReserve function when indexes are in different positions",
+  "issueId": 120,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/120"
+}
