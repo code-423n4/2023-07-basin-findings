@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Sabit",
+  "risk": "3",
+  "title": "MultiFlowPump.readTwaReserves will throw error when called and won't calculate time weighted average because of missing parameter",
+  "issueId": 112,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/112"
+}
