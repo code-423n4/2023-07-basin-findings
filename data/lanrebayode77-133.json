@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "lanrebayode77",
+  "risk": "2",
+  "title": "Possible Revert on RemoveLiquidity Method due to Division by zero",
+  "issueId": 133,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/133"
+}
