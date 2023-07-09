@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "a3yip6",
+  "risk": "3",
+  "title": "Missing check about fee-on-transfer tokens",
+  "issueId": 111,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/111"
+}
