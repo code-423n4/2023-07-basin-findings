@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Vagner",
+  "risk": "3",
+  "title": "Function `shift` in `Well.sol` can be used by anyone to steal valuable ERC20's ",
+  "issueId": 128,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/128"
+}
