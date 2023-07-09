@@ -37,4 +37,12 @@ In this case the assertions https://github.com/code-423n4/2023-07-basin/blob/940
 ## Solution
 Use `swapFromFeeOnTransfer` for every transfer.
 
+# [Non-Critical] AMM functionality is limited with the `_calcReserve()` functions
+## Impact
+AMMs which are self-balancing (to stabilise prices) cannot be implemented as Basin only allows only two reserves to be modified in a swap (`tokenFrom` and `tokenTo`).
 
+## Proof of Concept
+https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L701
+
+## Solution 
+Allow `wellFunction` to modify all reserves.
