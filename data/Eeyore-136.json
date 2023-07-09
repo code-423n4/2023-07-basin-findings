@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Eeyore",
+  "risk": "3",
+  "title": "Pumps are not updated in the shift() and sync() functions, allowing oracle manipulation",
+  "issueId": 136,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/136"
+}
