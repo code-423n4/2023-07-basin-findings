@@ -1,0 +1,4 @@
+The approach that I have taken in this evaluating this codebase is similar to other codebases, I read the code at a very low level at first to see if there are any inconsistencies in the codebase or logic flaws then I try to understand it as effective as possible from a high level perspective to see if the implementation is done right. I learned a lot of new things about bytes manipulation and how you can store different storage values to different location, since this contract uses a lot of storage manipulation. The only finding the I reported , I consider to be a very important High finding since the vulnerability can be easily abused by an attacker and value could be taken out, hurting the protocol.
+
+### Time spent:
+10 hours
