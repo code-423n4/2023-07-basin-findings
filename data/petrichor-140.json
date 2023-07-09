@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "petrichor",
+  "risk": "2",
+  "title": "ABI encodePacked Collision",
+  "issueId": 140,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/140"
+}
