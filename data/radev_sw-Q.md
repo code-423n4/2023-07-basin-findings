@@ -2,8 +2,8 @@
 ### Summary
 Aquifer is Factory contract for deploying Well contracts. The Aquifer creates a single implementation of Well and then creates a proxy to that implementation every time a new Well contract needs to be deployed, but don't initialize it, which means that anybody can initialize the contract.
 
-The Wll.sol contract is provided on the attack vector surfaces where someone could everytime frontrun it by monitoring the mempool. The initialize() function can be called by anyone who monitors the mempool.
-A malicious attacker could monitor the blockchain for bytecode that matches the Well contract or the initialize() function signature and frontrun the transaction. This act can be repeated in a way similar to a Denial Of Service (DOS) attack, effectively stopping contract deployment. This could lead to the failure of the project plan and result in unrecoverable gas costs.
+The Wll.sol contract is provided on the attack vector surfaces where someone could everytime frontrun it by monitoring the mempool. The init() function can be called by anyone who monitors the mempool.
+A malicious attacker could monitor the blockchain for bytecode that matches the Well contract or the init() function signature and frontrun the transaction. This act can be repeated in a way similar to a Denial Of Service (DOS) attack, effectively stopping contract deployment. This could lead to the failure of the project plan and result in unrecoverable gas costs.
 
 Current implementation of Aquifer constructor
 ```solidity
@@ -12,8 +12,8 @@ Current implementation of Aquifer constructor
 
 ### Recommendation
 There are two ways:
-- Add initialize() in Aquifer.sol constructor
-- Add initialize() in Well.sol constructor (and make the initialize() function public instead of external)
+- Add init() in Aquifer.sol constructor
+- Add init() in Well.sol constructor (and make the initialize() function public instead of external)
  
 
 # [QA-02] Array Length Mismatch in `_addLiquidity` function
@@ -44,3 +44,40 @@ Add:
 ```solidity
 require(lpAmountOut > 0, "No liquidity tokens to mint");
 ```
+
+# [QA-04] Use different approach to check for ERC20 token duplicates
+### Summary
+You can use mapping to check for ERC20 token duplicates in `init()` function in Well.sol contract
+```solidity
+        mapping(uint256 => bool) seenTokens;
+
+        for (uint256 i = 0; i < _tokens.length; i++) {
+            if (seenTokens[_tokens[i]]) {
+                revert DuplicateTokens(_tokens[i]);
+            }
+            seenTokens[_tokens[i]] = true;
+        }
+```
+
+Using a mapping to check for duplicates in a single pass with a time complexity of O(n) is more efficient than nested loops with a time complexity of O(n^2), particularly when the size of the array is large.
+
+1. **Time Complexity**:
+- The nested loops approach takes O(n^2) time because for each element in the array, it compares it with almost every other element in the array. So, if there are `n` elements, it will perform roughly `n * n = n^2` comparisons.
+- The mapping approach takes O(n) time because it iterates through the array once and uses a constant time operation (hash map lookup/insertion) to check for duplicates.
+
+Let's take an example:
+- For an array of size 100:
+- The nested loops approach will take approximately 100 * 100 = 10,000 operations.
+- The mapping approach will take approximately 100 operations.
+
+- For an array of size 1000:
+- The nested loops approach will take approximately 1000 * 1000 = 1,000,000 operations.
+- The mapping approach will take approximately 1000 operations.
+
+2. **Gas Costs**:
+- In Ethereum, computational operations cost gas, and gas is directly related to real money (Ether). Having fewer operations (as in the mapping approach) will generally cost less gas, especially when the array sizes are large.
+
+3. **Performance**:
+- As the array size grows, the nested loops approach will take exponentially more time to execute than the mapping approach. This can lead to slower transaction times and potentially even transaction failures if the gas limit is exceeded.
+
+In conclusion, the mapping approach is much more efficient in terms of execution time and gas costs, especially when dealing with large datasets. It is generally a good practice to prefer algorithms with lower time complexity when writing smart contracts to optimize for performance and gas costs.
