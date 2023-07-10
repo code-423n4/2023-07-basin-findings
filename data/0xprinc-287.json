@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xprinc",
+  "risk": "3",
+  "title": "The `MultiFlowPump.sol/update()` function will neither update nor revert any call made to it by any Well Implementation, hence will fail in storing the correct reserve values.",
+  "issueId": 287,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/287"
+}
