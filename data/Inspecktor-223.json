@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Inspecktor",
+  "risk": "3",
+  "title": "Anyone can receive funds from the Well.sol contract, thus reducing the token/tokenLp ratio for users",
+  "issueId": 223,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/223"
+}
