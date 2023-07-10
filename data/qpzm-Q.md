@@ -19,6 +19,7 @@ Add this test in `Well.AddLiquidity.t.sol`.
 function test_addLiquidity0() public {
     uint256[] memory amounts = new uint256[](tokens.length);
     amounts[0] = 100;
+    // @audit this is the first minting of Well token 
     well.addLiquidity(amounts, 0, user, type(uint256).max);
 
     Balances memory userBalance = getBalances(user, well);
@@ -37,13 +38,13 @@ _mint(recipient, lpAmountOut);
 ##  2. `Well.decimals()` 18 is misleading
 
 ### Description
-Curve 3pool uses 18 decimals and 1e18 LP tokens is almost equivalent to 1DAI according to the return value of `get_virtual_price()`.
+Curve 3pool uses 18 decimals and 1e18 LP tokens are almost equivalent to 1DAI according to the return value of `get_virtual_price()`.
 https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy#L50-L56
 https://github.com/curvefi/curve-contract/blob/master/contracts/pools/3pool/StableSwap3Pool.vy#L229
 
-`UniswapV2Pair` uses 18 decimals for LP tokens and 1 UniswapV2Pair token is equivalent to the sum of 1 tokenA and 1 tokenB when the pair is in balance.
+`UniswapV2Pair` uses 18 decimals for LP tokens and 1e18 UniswapV2Pair token is equivalent to the sum of 1e18 tokenA and 1e18 tokenB when the pair is in balance when both tokens uses decimals 18.
 For example, DAI-USDC Pair https://etherscan.io/address/0xae461ca67b15dc8dc81ce7615e0320da1a9ab8d5 returns 18 in function `decimals()`.
-On the other hand, the Well contract uses 18 decimals, but its decimals are, in fact, 24 because it uses `x * y * 1e12` as the token supply.
+On the other hand, the Well contract uses 18 decimals, but its decimals are, in fact, 24 because it uses `x * y * 1e12` as the token supply. If you addLiquidity with 1 tokenA and 1 tokenB, `Well.totalSupply()` returns 1e6.
 
 ### Recommendation
 Save `x * y * 1e12` in a new state variable `_tokenSupply` and override `tokenSupply()` to return truncated least significant 6 digits.
