@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "TiesStevelink",
+  "risk": "3",
+  "title": "A malicious user can steal a reserved token by using shift() function if the well was added liquidity unsafely with only one token amount.",
+  "issueId": 193,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/193"
+}
