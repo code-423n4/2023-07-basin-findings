@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Trust",
+  "risk": "3",
+  "title": "Recommended use of shift() is vulnerable to theft of all user's funds",
+  "issueId": 264,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/264"
+}
