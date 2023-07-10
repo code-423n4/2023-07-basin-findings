@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "CRIMSON-RAT-REACH",
+  "risk": "3",
+  "title": "Well.sol contract allows anyone to add liquidity to tokens with fee-on-transfer by calling the addLiquidity function",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/185"
+}
