@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Inspecktor",
+  "risk": "2",
+  "title": "removeLiquidity(), addLiquidity(), removeLiquidityImbalanced() functions may give unexpected results",
+  "issueId": 224,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/224"
+}
