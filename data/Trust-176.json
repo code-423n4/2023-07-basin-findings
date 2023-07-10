@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Trust",
+  "risk": "2",
+  "title": "Treating of BLOCK_TIME as permanent will cause serious economic flaws in the oracle when block times change",
+  "issueId": 176,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/176"
+}
