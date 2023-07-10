@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "pfapostol",
+  "risk": "2",
+  "title": "`src\\functions\\ConstantProduct2.sol` and `src\\functions\\ProportionalLPToken2.sol`  do not guarantee that the function will not be called with more than 2 reserves",
+  "issueId": 163,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/163"
+}
