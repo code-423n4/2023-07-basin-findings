@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xBugBuster",
+  "risk": "3",
+  "title": "Well.sol::swapFrom() Missing Fee-on-Transfer Token Check",
+  "issueId": 265,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/265"
+}
