@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "33audits",
+  "risk": "2",
+  "title": "`_addLiquidity()` can fail on zero amount transfers if treasury fee is set to zero",
+  "issueId": 289,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/289"
+}
