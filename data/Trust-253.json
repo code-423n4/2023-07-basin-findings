@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Trust",
+  "risk": "3",
+  "title": "TWAP can be easily manipulated by attacker through the sync() function, causing loss of funds",
+  "issueId": 253,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/253"
+}
