@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "QiuhaoLi",
+  "risk": "3",
+  "title": "imcomplete fix for read-only-reentrancy",
+  "issueId": 202,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/202"
+}
