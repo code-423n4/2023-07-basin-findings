@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "wallstreetvilkas",
+  "risk": "3",
+  "title": "cumulativeReserves can be incorrect",
+  "issueId": 204,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/204"
+}
