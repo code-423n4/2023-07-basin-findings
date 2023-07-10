@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "LokiThe5th",
+  "risk": "3",
+  "title": "Funds added to reserves through `sync` are accidentally transferred out to users",
+  "issueId": 296,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/296"
+}
