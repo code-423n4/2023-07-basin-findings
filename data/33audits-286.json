@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "33audits",
+  "risk": "2",
+  "title": "Constant Product formula overflowing if number of tokens in reserve is too high",
+  "issueId": 286,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/286"
+}
