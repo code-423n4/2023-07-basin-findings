@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "kutugu",
+  "risk": "2",
+  "title": "When the reserve length is greater than uint8, pump update has problem",
+  "issueId": 166,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/166"
+}
