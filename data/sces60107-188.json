@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "sces60107",
+  "risk": "2",
+  "title": "Each Well is responsible for ensuring that an `update` call cannot be made with a reserve of 0.",
+  "issueId": 188,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/188"
+}
