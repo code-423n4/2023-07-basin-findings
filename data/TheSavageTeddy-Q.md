@@ -147,3 +147,65 @@ File: Well.sol
 +616:         }
 +617:     }
 ```
+
+### [04] Incorrect comments
+
+Here:
+
+```solidity
+File: LibBytes16.sol
+39:             // Equivalent to "i % 2 == 1", but cheaper.
+40:             if (reserves.length & 1 == 1) {
+```
+
+The comment should be `// Equivalent to "reserves.length % 2 == 1", but cheaper.` to be accurate. This comment was reused in the correct case here:
+
+```solidity
+File: LibBytes.sol
+97:             // Equivalent to "i % 2 == 1", but cheaper.
+98:             if (i & 1 == 1) {
+```
+
+but the variable is different in the other case. This could lead to some confusion as `i` could refer to the variable defined in the previous `for` loop.
+
+Full code:
+```solidity
+File: LibBytes.sol
+48:             for (uint256 i; i < maxI; ++i) {
+49:                 require(reserves[2 * i] <= type(uint128).max, "ByteStorage: too large");
+50:                 require(reserves[2 * i + 1] <= type(uint128).max, "ByteStorage: too large");
+51:                 iByte = i * 64;
+52:                 assembly {
+53:                     sstore(
+54:                         add(slot, mul(i, 32)),
+55:                         add(mload(add(reserves, add(iByte, 32))), shl(128, mload(add(reserves, add(iByte, 64)))))
+56:                     )
+57:                 }
+58:             }
+59:             // If there is an odd number of reserves, create a slot with the last reserve
+60:             // Since `i < maxI` above, the next byte offset `maxI * 64`
+61:             // Equivalent to "i % 2 == 1", but cheaper.
+62:             if (reserves.length & 1 == 1) {
+```
+
+Total list of instances (3):
+```solidity
+File: LibBytes.sol
+61:             // Equivalent to "i % 2 == 1", but cheaper.
+62:             if (reserves.length & 1 == 1) {
+```
+https://github.com/code-423n4/2023-07-basin/blob/main/src/libraries/LibBytes.sol#L61-L62
+
+```solidity
+File: LibBytes16.sol
+39:             // Equivalent to "i % 2 == 1", but cheaper.
+40:             if (reserves.length & 1 == 1) {
+```
+https://github.com/code-423n4/2023-07-basin/blob/main/src/libraries/LibBytes16.sol#L39-L40
+
+```solidity
+File: LibLastReserveBytes.sol
+52:             // Equivalent to "i % 2 == 1" but cheaper.
+53:             if (reserves.length & 1 == 1) {
+```
+https://github.com/code-423n4/2023-07-basin/blob/main/src/libraries/LibLastReserveBytes.sol#L52-L53
