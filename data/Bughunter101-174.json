@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Bughunter101",
+  "risk": "2",
+  "title": "The `expire()` modifier is is useless because of just checkl `block.timestamp > deadline` and the `deadline` can be faked",
+  "issueId": 174,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/174"
+}
