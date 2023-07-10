@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "te_aut",
+  "risk": "3",
+  "title": "Inconsistent use of state variable uint256 constant ‘ONE-WORD’ across interacting contracts that use shared logic could result in incorrect calculations, incorrect assumptions about memory layout, and unexpected behaviors.",
+  "issueId": 257,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/257"
+}
