@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Trust",
+  "risk": "3",
+  "title": "Due to slot confusion, reserve amounts in the pump will be corrupted, resulting in wrong oracle values",
+  "issueId": 260,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/260"
+}
