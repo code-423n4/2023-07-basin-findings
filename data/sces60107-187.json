@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "sces60107",
+  "risk": "3",
+  "title": "`Aquifer.boreWell` can be front-runned with malicious `initFunctionCall` ",
+  "issueId": 187,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/187"
+}
