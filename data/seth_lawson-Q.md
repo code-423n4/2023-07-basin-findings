@@ -1,4 +1,6 @@
-NC-1 : Remove forge-std import
+# NC-1 : Remove forge-std import
+
+forge-std is used for logging and debugging and should be removed when not being used for development.
 
 script\deploy\Aquifer.s.sol:
   4: import {Script} from "forge-std/Script.sol";
