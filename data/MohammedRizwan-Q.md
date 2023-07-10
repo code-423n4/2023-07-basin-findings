@@ -20,7 +20,7 @@ It is always recommended to follow Checks, Effect and Interactions(CEI) pattern 
 
 There is 1 instance of this issue:
 
-Instance 1:- In Well.sol at [L-371](https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L369-L371).
+In Well.sol at [L-371](https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L369-L371).
 
 For example:
 
@@ -32,7 +32,6 @@ For example:
 +           tokenOut.safeTransfer(recipient, amountOut);
 
         // Some code
-
 ```
 
 ### [L&#x2011;03]  Use latest version of openzeppelin library
