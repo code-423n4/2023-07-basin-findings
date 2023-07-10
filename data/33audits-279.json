@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "33audits",
+  "risk": "3",
+  "title": "Tokens with multiple addresses should be blocklisted to prevent the creation of multiple pools for the same token",
+  "issueId": 279,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/279"
+}
