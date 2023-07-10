@@ -81,3 +81,11 @@ Let's take an example:
 - As the array size grows, the nested loops approach will take exponentially more time to execute than the mapping approach. This can lead to slower transaction times and potentially even transaction failures if the gas limit is exceeded.
 
 In conclusion, the mapping approach is much more efficient in terms of execution time and gas costs, especially when dealing with large datasets. It is generally a good practice to prefer algorithms with lower time complexity when writing smart contracts to optimize for performance and gas costs.
+
+# [QA-05] Add maxAmountOut function parameter for additional slippage protection
+### Summary
+In the current version of the `swapFrom()` function, the output amount (i.e., amountOut) is only checked against a minimum threshold (minAmountOut). This approach could lead to unexpected outcomes if the amount of toToken to be received is higher than anticipated. This issue could occur due to price fluctuations, and it might impact users who have strict balance requirements or those whose token positions could be affected negatively by receiving an unexpectedly large number of tokens.
+
+A maxAmountOut parameter could be added to the `swapFrom()` function to provide an upper limit for amountOut. This adjustment could offer a second layer of control against slippage and afford users more predictability.
+
+The same additional slippage check can be done for `shift()`, `swapFromFeeOnTransfer()` `addLiquidity()` and `removeLiquidity` function.
