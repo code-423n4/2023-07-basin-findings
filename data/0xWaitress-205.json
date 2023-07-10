@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "_swapTo becomes a free opportunity to acquire tokens when fromToken is a rebasing token && _calcReserve makes use latest balanceOf ",
+  "issueId": 205,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/205"
+}
