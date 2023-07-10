@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "0xWaitress",
+  "risk": "2",
+  "title": "_swapFrom would revert from underflow when a pool has a rebase token; and the post-swap output token balance becomes bigger than the last cached value",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/200"
+}
