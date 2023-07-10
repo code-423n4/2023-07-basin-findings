@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Topmark",
+  "risk": "2",
+  "title": "Absence of Error Handling when Output Amount Request is larger than Reserve",
+  "issueId": 179,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/179"
+}
