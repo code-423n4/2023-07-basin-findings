@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Udsen",
+  "risk": "2",
+  "title": "ARRAY LENGTH MISMATCH CAN LEAD TO TRANSACTION REVERTS",
+  "issueId": 294,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/294"
+}
