@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "QiuhaoLi",
+  "risk": "2",
+  "title": "users can receive tokens less than minAmountOut when using swapFromFeeOnTransfer",
+  "issueId": 184,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/184"
+}
