@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Trust",
+  "risk": "2",
+  "title": " Lack of validation in ConstantProduct2 makes calcReserve output an invalid reserve amount, when index >1",
+  "issueId": 256,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/256"
+}
