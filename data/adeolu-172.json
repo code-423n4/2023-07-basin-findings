@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "adeolu",
+  "risk": "2",
+  "title": "Improper Validation Of create2 Return Value can cause inexisitent new well contract address to be saved to storage in aquifier.sol",
+  "issueId": 172,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/172"
+}
