@@ -1,0 +1,8 @@
+{
+  "contest": 259,
+  "handle": "Avci",
+  "risk": "3",
+  "title": "the swapFrom() function allows the Fee On Transfer tokens and _setReserves doesn't revert ",
+  "issueId": 276,
+  "issueUrl": "https://github.com/code-423n4/2023-07-basin-findings/issues/276"
+}
