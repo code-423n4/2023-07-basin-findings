@@ -7,9 +7,10 @@
 | [G-03] | Write for loops in more gas efficient way                                                                 |     6     |
 | [G-04] | Memory variables should be cached in stack(if possible) variables rather than re-reading them from memory |     5     |
 | [G-05] | Function calls can be cached rather than re calling from same function with same value will save gas      |     2     |
-
 | [G-06] | Use unchecked{} whenever underflow/overflow not possible saves 130 gas each time | 1 |
-Total 6 issues
+| [G-07] | Using ternary operator instead of if else saves gas | 1 |
+
+Total 7 issues
 
 ## [G-01] Do not calculate constant variables
 
@@ -239,7 +240,7 @@ _1 instance - 1 file:_
 ### Instance#1 : `i-1` can be unchecked due to line 93 for () condition initialization and increment
 
 ```solidity
-File:
+File: src/libraries/LibLastReserveBytes.sol
 
  93:         for (uint256 i = 3; i <= n; ++i) {
                 // `iByte` is the byte position for the current slot:
@@ -251,3 +252,26 @@ File:
 ```
 
 https://github.com/code-423n4/2023-07-basin/blob/main/src/libraries/LibLastReserveBytes.sol#L93C9-L97C42
+
+## [G-07] Using ternary operator instead of if else saves gas
+
+_1 instance - 1 file:_
+
+### Instance#1 :
+
+```solidity
+File: /src/Aquifer.sol
+40:   if (immutableData.length > 0) {
+            if (salt != bytes32(0)) {
+                well = implementation.cloneDeterministic(immutableData, salt);
+            } else {
+                well = implementation.clone(immutableData);
+            }
+        } else {
+            if (salt != bytes32(0)) {
+                well = implementation.cloneDeterministic(salt);
+            } else {
+50:                well = implementation.clone();
+```
+
+https://github.com/code-423n4/2023-07-basin/blob/main/src/Aquifer.sol#L40C9-L50C14
