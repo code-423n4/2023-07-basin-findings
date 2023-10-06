@@ -29,7 +29,7 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   6. [Cosine](https://code4rena.com/@Cosine)
   7. [Eeyore](https://code4rena.com/@Eeyore)
   8. [qpzm](https://code4rena.com/@qpzm)
-  9. CRIMSON-RAT-REACH ([0xtotem](https://code4rena.com/@0xtotem), [imkapadia](https://code4rena.com/@imkapadia), [cergyk](https://code4rena.com/@cergyk),[paspe](https://code4rena.com/@paspe), [vangrim](https://code4rena.com/@vangrim), [devblixt](https://code4rena.com/@devblixt), [0xChuck](https://code4rena.com/@0xChuck), [vani](https://code4rena.com/@vani), [escrow](https://code4rena.com/@escrow) and [VictoryGod](https://code4rena.com/@VictoryGod))
+  9. CRIMSON-RAT-REACH ([0xtotem](https://code4rena.com/@0xtotem), [imkapadia](https://code4rena.com/@imkapadia), [cergyk](https://code4rena.com/@cergyk),[paspe](https://code4rena.com/@paspe), [vangrim](https://code4rena.com/@vangrim), [devblixt](https://code4rena.com/@devblixt), [0xChuck](https://code4rena.com/@0xChuck), [vani](https://code4rena.com/@vani), [escrow](https://code4rena.com/@escrow), [VictoryGod](https://code4rena.com/@VictoryGod))
   10. [ptsanev](https://code4rena.com/@ptsanev)
   11. [LokiThe5th](https://code4rena.com/@LokiThe5th)
   12. [peanuts](https://code4rena.com/@peanuts)
@@ -69,7 +69,7 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   46. [0xWaitress](https://code4rena.com/@0xWaitress)
   47. [Topmark](https://code4rena.com/@Topmark)
   48. [2997ms](https://code4rena.com/@2997ms)
-  49. LosPollosHermanos ([LemonKurd](https://code4rena.com/@LemonKurd), [jc1](https://code4rena.com/@jc1) and [scaraven](https://code4rena.com/@scaraven))
+  49. LosPollosHermanos ([LemonKurd](https://code4rena.com/@LemonKurd), [jc1](https://code4rena.com/@jc1), [scaraven](https://code4rena.com/@scaraven))
   50. [max10afternoon](https://code4rena.com/@max10afternoon)
   51. [JGcarv](https://code4rena.com/@JGcarv)
   52. [kaveyjoe](https://code4rena.com/@kaveyjoe)
@@ -88,7 +88,7 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   65. [Strausses](https://code4rena.com/@Strausses)
   66. [Udsen](https://code4rena.com/@Udsen)
   67. [Eurovickk](https://code4rena.com/@Eurovickk)
-  68. CyberPunks ([Stryder](https://code4rena.com/@Stryder) and [andrewprasaath](https://code4rena.com/@andrewprasaath))
+  68. CyberPunks ([Stryder](https://code4rena.com/@Stryder), [andrewprasaath](https://code4rena.com/@andrewprasaath))
   69. [twcctop](https://code4rena.com/@twcctop)
   70. [John](https://code4rena.com/@John)
   71. [404Notfound](https://code4rena.com/@404Notfound)
@@ -97,9 +97,9 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   74. [fatherOfBlocks](https://code4rena.com/@fatherOfBlocks)
 
 
-This audit was judged by [alcueca](https://code4rena.com/@alcueca).
+This audit was judged by alcueca
 
-Final report assembled by PaperParachute.
+Final report assembled by PaperParachute
 
 # Summary
 
@@ -645,7 +645,7 @@ In `Well.sync()`, mint `(reserves[0] * reserves[1] * ConstantProduct2.EXP_PRECIS
 
 This keeps the invariant that `Well.tokenSupply() ** 2` equals to `reserves[0] * reserves[1] * ConstantProduct2.EXP_PRECISION` as long as the swap fee is 0.
 
-**[publiuss (Basin) confirmed via duplicate issue #210](https://github.com/code-423n4/2023-07-basin-findings/issues/210)**
+**[publiuss (Basin) confirmed on a duplicate finding](https://github.com/code-423n4/2023-07-basin-findings/issues/210)**
 
 **[trust1995 (Warden) commented](https://github.com/code-423n4/2023-07-basin-findings/issues/191#issuecomment-1671517978):**
  > This is a good find. However it is hard to find rationalization for HIGH impact.
@@ -749,17 +749,17 @@ Excess reserve tokens should be returned when the user adds liquidity
 
 ***
 
-## [[M-07] `boreWell` can be frontrun/DoS-d](https://github.com/code-423n4/2023-07-basin-findings/issues/181)
+## [[M-07] boreWell can be frontrun/DoS-d](https://github.com/code-423n4/2023-07-basin-findings/issues/181)
 *Submitted by [tonisives](https://github.com/code-423n4/2023-07-basin-findings/issues/181), also found by [Inspecktor](https://github.com/code-423n4/2023-07-basin-findings/issues/221), [peanuts](https://github.com/code-423n4/2023-07-basin-findings/issues/217), [sces60107](https://github.com/code-423n4/2023-07-basin-findings/issues/187), [Qeew](https://github.com/code-423n4/2023-07-basin-findings/issues/159), and [MohammedRizwan](https://github.com/code-423n4/2023-07-basin-findings/issues/113)*
 
-The `boreWell` function in the Aquifer contract is responsible for creating new Wells. However, there are two critical security issues:
+The boreWell function in the Aquifer contract is responsible for creating new Wells. However, there are two critical security issues:
 
 1.  **Stealing of user's deposit amount**: The public readability of the `salt` parameter allows an attacker to frontrun a user's transaction and capture the deposit amount intended for the user's Well. By creating a Well with the same `salt` value, the attacker can receive the deposit intended for the user's Well and withdraw the funds.
-2.  **DoS for `boreWell`**: Another attack vector involves an attacker deploying a Well with the same `salt` value as the user's intended Well. This causes the user's transaction to be reverted, resulting in a denial-of-service (DoS) attack on the `boreWell` function. The attacker can repeatedly execute this attack, preventing users from creating new Wells.
+2.  **DoS for boreWell**: Another attack vector involves an attacker deploying a Well with the same `salt` value as the user's intended Well. This causes the user's transaction to be reverted, resulting in a denial-of-service (DoS) attack on the boreWell function. The attacker can repeatedly execute this attack, preventing users from creating new Wells.
 
-### Proof of Concept
+## Proof of Concept
 
-**Stealing of user's deposit amount**
+### Stealing of user's deposit amount
 
 If a user intends to create a new Well and deposit funds into it, an attacker can frontrun the user's transactions and capture the deposit amount. Here is how the attack scenario unfolds:
 
@@ -769,14 +769,14 @@ If a user intends to create a new Well and deposit funds into it, an attacker ca
 4.  As a result, the user's create Well transaction gets reverted, but the deposit transaction successfully executes, depositing the funds into the attacker's Well.
 5.  Being the owner of the Well, the attacker can simply withdraw the deposited funds from the Well.
 
-**DoS for `boreWell`**
+### DoS for boreWell
 
 In this attack scenario, an attacker can forcefully revert a user's create Well transaction by deploying a Well for themselves using the user's `salt` value. Here are the steps of the attack:
 
 1.  The user broadcasts a create Well transaction with a specific `salt` value.
 2.  The attacker frontruns the user's transaction and creates a Well for themselves using the same `salt` value.
 3.  As a result, the user's original create Well transaction gets reverted since the attacker's Well already exists at the predetermined address.
-4.  This attack can be repeated multiple times, effectively causing a denial-of-service (DoS) attack on the `boreWell` function.
+4.  This attack can be repeated multiple times, effectively causing a denial-of-service (DoS) attack on the boreWell function.
 
 ### Tools Used
 
@@ -904,6 +904,7 @@ Remove the `cloneDeterministic` feature, leaving the `clone` functionality only.
 **[publiuss (Basin) acknowledged and commented](https://github.com/code-423n4/2023-07-basin-findings/issues/168#issuecomment-1638531518):**
  > This issue is only an issue if an implementation address contains a way to self-destruct itself. No implementation address should be considered valid if it contains a way to self-destruct. This should be probably documented in all documentation.
 
+
 **[alcueca (Judge) commented](https://github.com/code-423n4/2023-07-basin-findings/issues/168#issuecomment-1665047792):**
  > Agree that this should be documented. It is pertinent to those auditing Wells.
 
@@ -914,20 +915,20 @@ Remove the `cloneDeterministic` feature, leaving the `clone` functionality only.
 
 ***
 
-## [[M-10] Transferout exclusive `feeOnTransfer` tokens will run out of well](https://github.com/code-423n4/2023-07-basin-findings/issues/108)
+## [[M-10] Transferout exclusive feeOnTransfer tokens will run out of well](https://github.com/code-423n4/2023-07-basin-findings/issues/108)
 *Submitted by [kutugu](https://github.com/code-423n4/2023-07-basin-findings/issues/108)*
 
 <https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L610> <br><https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L304> <br><https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L370>
 
 ### Impact
 
-The well does not check the actual transferout amount and the k value, which for exclusive `feeOnTransfer` tokens causes the well to have a portion of the token fee cut out of air every time the token is transferred, which is not included in the transfer amount. Attackers can take advantage of this to run out of well.
+The well does not check the actual transferout amount and the k value, which for exclusive feeOnTransfer tokens causes the well to have a portion of the token fee cut out of air every time the token is transferred, which is not included in the transfer amount. Attackers can take advantage of this to run out of well.
 
 ### Proof of Concept
 
 The most common attack flow is through the skim function:
 
-1.  Attacker swaps to increase the price of exclusive `feeOnTransfer` token
+1.  Attacker swaps to increase the price of exclusive feeOnTransfer token
 2.  Attacker transfers token to well and skim. This will cut some of the well funds
 3.  Repeat the above process to reduce the number of well tokens to 1
 4.  Attacker calls sync and swap to pair token
@@ -943,22 +944,22 @@ Check the correct amount every time you transfer out.
 
 **[publiuss (Basin) disputed and commented](https://github.com/code-423n4/2023-07-basin-findings/issues/108#issuecomment-1665031901):**
  >`Skim` will only transfer tokens out of the Well if the balances of tokens in the well are greater than the reserves of the Well. This only happens if someone sends tokens to the Well without calling `sync` or `shift`.
->
+
  >There is no way to abuse this mechanism as the Well's token balances can never drop below reserve balances as a result of skim.
 
 **[alcueca (Judge) commented](https://github.com/code-423n4/2023-07-basin-findings/issues/108#issuecomment-1740341036):**
  >@publiuss, I can reduce the severity to QA on account of the low quality and invalid Proof of Concept, but I think that the attack vector is valid.
->
+
  >Correct me if I'm wrong, but swapFromFeeOnTransfer only considers fees in the incoming token. For the outgoing token it assumes that fees will be deducted from the amount received, and calls _swapFrom as for non-fee tokens.
->
+
  >Normally I wouldn't worry too much about fee-on-transfer tokens, but you explicitly intend to support them, and there is no standard defining how fees should be collected, so they could be deducted from the sender's balance after each successful transfer.
->
+
  >During a swapFromFeeOnTransfer, inside the _swapFrom call, we will calculate what the reserves should be, and from there the amountOut. Then the Well transfers out the amountOut and sets the reserves to the calculated amounts.
->
+
  >Only that if a fee is collected from the sender after the transfer, the stored reserves will be higher than the actual well balances, and this discrepancy will grow with each swap.
->
+
  >Would you please check again if my reasoning is right?
->
+
  >I don't know if I would fix this in the code, I would most likely just state in the docs that only fee-on-transfer tokens where the fee is collected from the receiver are supported, and those where the fee is collected from the sender are not, but that is up to you.
 
 **[publiuss (Basin) commented](https://github.com/code-423n4/2023-07-basin-findings/issues/108#issuecomment-1665031901):**
@@ -966,7 +967,7 @@ Check the correct amount every time you transfer out.
 
 ***
 
-## [[M-11] `addLiquidity` Sandwich Attack for unbalanced token deposits](https://github.com/code-423n4/2023-07-basin-findings/issues/82)
+## [[M-11] addLiquidity Sandwich Attack for unbalanced token deposits](https://github.com/code-423n4/2023-07-basin-findings/issues/82)
 *Submitted by [Cosine](https://github.com/code-423n4/2023-07-basin-findings/issues/82)*
 
 <https://github.com/code-423n4/2023-07-basin/blob/c1b72d4e372a6246e0efbd57b47fb4cbb5d77062/src/Well.sol#L392-L399>
@@ -1231,11 +1232,12 @@ Bad assumptions to calculate the number of block passed here. BLOCK_TIME is an i
 ### Mitigation Steps
 Do not assume the block rate to remain constant in the future or implement some function that modifies the BLOCK_TIME every T seconds/minutes/whatever. 
 
+
 **[alcueca (Judge) increased severity to Medium](https://github.com/code-423n4/2023-07-basin-findings/issues/10#issuecomment-1666616238)**
 
 **[publiuss (Basin) acknowledged and commented](https://github.com/code-423n4/2023-07-basin-findings/issues/10#issuecomment-1666616238)**
 >First QA item is acknowledged. The modifier is there to initialize the `ReentrancyGuard` contract. Imo, its cleaner to have an empty constructor than to have no constructor and have the user realize that it uses the `ReentrancyGuard` modifier by defualt. This item is a duplicate of other QA reports.
->
+
  >Second QA item is a duplicate of: #176. See comment on issue for remediation status.
 
 ***
@@ -1406,7 +1408,7 @@ https://github.com/code-423n4/2023-07-basin/blob/main/src/pumps/MultiFlowPump.so
 
 https://github.com/code-423n4/2023-07-basin/blob/main/src/pumps/MultiFlowPump.sol#L307
 
-## [G-03] Amounts should be checked for 0 before calling a transfer
+## [G-03] Amounts should be checked for 0 before calling a transfer
 
 It can be beneficial to check if an amount is zero before invoking a transfer function, such as transfer or safeTransfer, to avoid unnecessary gas costs associated with executing the transfer operation. If the amount is zero, the transfer operation would have no effect, and performing the check can prevent unnecessary gas consumption.
 
@@ -1435,9 +1437,9 @@ https://github.com/code-423n4/2023-07-basin/blob/main/src/Well.sol#L780
 
 
 
-## [G-04] With assembly, .call (bool success) transfer can be done gas-optimized
+## [G-04] With assembly, .call (bool success) transfer can be done gas-optimized
 
-Return data (bool success,) has to be stored due to EVM architecture, but in a usage like below, ‘out’ and ‘outsize’ values are given (0,0), this storage disappears and gas optimization is provided.
+Return data (bool success,) has to be stored due to EVM architecture, but in a usage like below, ‘out’ and ‘outsize’ values are given (0,0), this storage disappears and gas optimization is provided.
    (bool success,) = dest.call{value:amount}("");
  bool success; 
  assembly {  
@@ -1523,7 +1525,7 @@ https://github.com/code-423n4/2023-07-basin/blob/main/src/libraries/LibContractI
 
 https://github.com/code-423n4/2023-07-basin/blob/main/src/libraries/LibContractInfo.sol#L37
 
-## [G-07] x += y costs more gas than x = x + y for state variables
+## [G-07] x += y costs more gas than x = x + y for state variables
 
 ```solidity
 File: /src/Well.sol
@@ -1536,9 +1538,9 @@ https://github.com/code-423n4/2023-07-basin/blob/main/src/Well.sol#L103
 https://github.com/code-423n4/2023-07-basin/blob/main/src/Well.sol#L105
 
 
-## [G-08] Remove the initializer modifier
+## [G-08] Remove the initializer modifier
 
-If we can just ensure that the initialize() function could only be called from within the constructor, we shouldn’t need to worry about it getting called again.
+If we can just ensure that the initialize() function could only be called from within the constructor, we shouldn’t need to worry about it getting called again.
 
 ```solidity
 File: /src/Well.sol
@@ -1860,23 +1862,24 @@ https://github.com/code-423n4/2023-07-basin/blob/main/src/Aquifer.sol#L58
 
 
 **[publiuss (Basin) acknowledged and commented](https://github.com/code-423n4/2023-07-basin-findings/issues/272#issuecomment-1690777881):**
- > G-01 No remediation<br>
-> G-02 Fixed<br>
-> G-03 No remediation - costs more gas<br>
-> G-04 No remediation<br>
-> G-05 Fixed<br>
-> G-06 No remediation - costs more gas<br>
-> G-07 No remediation - costs more gas<br>
-> G-08 No remediation - the initializer modifier is necessary<br>
-> G-09 No remediation - costs more gas<br>
-> G-10 No remediation - This is in a script and not in a contract.<br>
-> G-11 Fixed<br>
-> G-12 No remediation - This is in a script and not in a contract.<br>
-> G-13 No remediation - This code has already been removed.<br>
-> G-14 No remediation<br>
-> G-15 No remediation<br>
-> G-16 No remediation - costs more gas<br>
-> G-17 No remediation<br>
+>G-01 No remediation<br>
+G-02 Fixed<br>
+G-03 No remediation - costs more gas<br>
+G-04 No remediation<br>
+G-05 Fixed<br>
+G-06 No remediation - costs more gas<br>
+G-07 No remediation - costs more gas<br>
+G-08 No remediation - the initializer modifier is necessary.<br>
+G-09 No remediation - costs more gas<br>
+G-10 No remediation - This is in a script and not in a contract.<br>
+G-11 Fixed<br>
+G-12 No remediation - This is in a script and not in a contract.<br>
+G-13 No remediation - This code has already been removed.<br>
+G-14 No remediation<br>
+G-15 No remediation<br>
+G-16 No remediation - costs more gas<br>
+G-17 No remediation<br>
+G-18 No remediation<br>
 
 
 ***
