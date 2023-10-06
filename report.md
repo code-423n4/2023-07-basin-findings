@@ -29,7 +29,7 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   6. [Cosine](https://code4rena.com/@Cosine)
   7. [Eeyore](https://code4rena.com/@Eeyore)
   8. [qpzm](https://code4rena.com/@qpzm)
-  9. CRIMSON-RAT-REACH ([0xtotem](https://code4rena.com/@0xtotem), [imkapadia](https://code4rena.com/@imkapadia), [cergyk](https://code4rena.com/@cergyk),[paspe](https://code4rena.com/@paspe), [vangrim](https://code4rena.com/@vangrim), [devblixt](https://code4rena.com/@devblixt), [0xChuck](https://code4rena.com/@0xChuck), [vani](https://code4rena.com/@vani), [escrow](https://code4rena.com/@escrow), [VictoryGod](https://code4rena.com/@VictoryGod))
+  9. CRIMSON-RAT-REACH ([0xtotem](https://code4rena.com/@0xtotem), [imkapadia](https://code4rena.com/@imkapadia), [cergyk](https://code4rena.com/@cergyk),[paspe](https://code4rena.com/@paspe), [vangrim](https://code4rena.com/@vangrim), [devblixt](https://code4rena.com/@devblixt), [0xChuck](https://code4rena.com/@0xChuck), [vani](https://code4rena.com/@vani), [escrow](https://code4rena.com/@escrow), and [VictoryGod](https://code4rena.com/@VictoryGod))
   10. [ptsanev](https://code4rena.com/@ptsanev)
   11. [LokiThe5th](https://code4rena.com/@LokiThe5th)
   12. [peanuts](https://code4rena.com/@peanuts)
@@ -69,7 +69,7 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   46. [0xWaitress](https://code4rena.com/@0xWaitress)
   47. [Topmark](https://code4rena.com/@Topmark)
   48. [2997ms](https://code4rena.com/@2997ms)
-  49. LosPollosHermanos ([LemonKurd](https://code4rena.com/@LemonKurd), [jc1](https://code4rena.com/@jc1), [scaraven](https://code4rena.com/@scaraven))
+  49. LosPollosHermanos ([LemonKurd](https://code4rena.com/@LemonKurd), [jc1](https://code4rena.com/@jc1), and [scaraven](https://code4rena.com/@scaraven))
   50. [max10afternoon](https://code4rena.com/@max10afternoon)
   51. [JGcarv](https://code4rena.com/@JGcarv)
   52. [kaveyjoe](https://code4rena.com/@kaveyjoe)
@@ -88,7 +88,7 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   65. [Strausses](https://code4rena.com/@Strausses)
   66. [Udsen](https://code4rena.com/@Udsen)
   67. [Eurovickk](https://code4rena.com/@Eurovickk)
-  68. CyberPunks ([Stryder](https://code4rena.com/@Stryder), [andrewprasaath](https://code4rena.com/@andrewprasaath))
+  68. CyberPunks ([Stryder](https://code4rena.com/@Stryder), and [andrewprasaath](https://code4rena.com/@andrewprasaath))
   69. [twcctop](https://code4rena.com/@twcctop)
   70. [John](https://code4rena.com/@John)
   71. [404Notfound](https://code4rena.com/@404Notfound)
@@ -97,9 +97,9 @@ During the audit outlined in this document, C4 conducted an analysis of the Basi
   74. [fatherOfBlocks](https://code4rena.com/@fatherOfBlocks)
 
 
-This audit was judged by alcueca
+This audit was judged by [alcueca](https://code4rena.com/@alcueca)
 
-Final report assembled by PaperParachute
+Final report assembled by PaperParachute.
 
 # Summary
 
@@ -645,7 +645,7 @@ In `Well.sync()`, mint `(reserves[0] * reserves[1] * ConstantProduct2.EXP_PRECIS
 
 This keeps the invariant that `Well.tokenSupply() ** 2` equals to `reserves[0] * reserves[1] * ConstantProduct2.EXP_PRECISION` as long as the swap fee is 0.
 
-**[publiuss (Basin) confirmed on a duplicate finding](https://github.com/code-423n4/2023-07-basin-findings/issues/210)**
+**[publiuss (Basin) confirmed via duplicate issue #210](https://github.com/code-423n4/2023-07-basin-findings/issues/210)**
 
 **[trust1995 (Warden) commented](https://github.com/code-423n4/2023-07-basin-findings/issues/191#issuecomment-1671517978):**
  > This is a good find. However it is hard to find rationalization for HIGH impact.
@@ -749,13 +749,13 @@ Excess reserve tokens should be returned when the user adds liquidity
 
 ***
 
-## [[M-07] boreWell can be frontrun/DoS-d](https://github.com/code-423n4/2023-07-basin-findings/issues/181)
+## [[M-07] `boreWell` can be frontrun/DoS-d](https://github.com/code-423n4/2023-07-basin-findings/issues/181)
 *Submitted by [tonisives](https://github.com/code-423n4/2023-07-basin-findings/issues/181), also found by [Inspecktor](https://github.com/code-423n4/2023-07-basin-findings/issues/221), [peanuts](https://github.com/code-423n4/2023-07-basin-findings/issues/217), [sces60107](https://github.com/code-423n4/2023-07-basin-findings/issues/187), [Qeew](https://github.com/code-423n4/2023-07-basin-findings/issues/159), and [MohammedRizwan](https://github.com/code-423n4/2023-07-basin-findings/issues/113)*
 
-The boreWell function in the Aquifer contract is responsible for creating new Wells. However, there are two critical security issues:
+The `boreWell` function in the Aquifer contract is responsible for creating new Wells. However, there are two critical security issues:
 
 1.  **Stealing of user's deposit amount**: The public readability of the `salt` parameter allows an attacker to frontrun a user's transaction and capture the deposit amount intended for the user's Well. By creating a Well with the same `salt` value, the attacker can receive the deposit intended for the user's Well and withdraw the funds.
-2.  **DoS for boreWell**: Another attack vector involves an attacker deploying a Well with the same `salt` value as the user's intended Well. This causes the user's transaction to be reverted, resulting in a denial-of-service (DoS) attack on the boreWell function. The attacker can repeatedly execute this attack, preventing users from creating new Wells.
+2.  **DoS for `boreWell`**: Another attack vector involves an attacker deploying a Well with the same `salt` value as the user's intended Well. This causes the user's transaction to be reverted, resulting in a denial-of-service (DoS) attack on the `boreWell` function. The attacker can repeatedly execute this attack, preventing users from creating new Wells.
 
 ## Proof of Concept
 
@@ -769,7 +769,7 @@ If a user intends to create a new Well and deposit funds into it, an attacker ca
 4.  As a result, the user's create Well transaction gets reverted, but the deposit transaction successfully executes, depositing the funds into the attacker's Well.
 5.  Being the owner of the Well, the attacker can simply withdraw the deposited funds from the Well.
 
-### DoS for boreWell
+### DoS for `boreWell`
 
 In this attack scenario, an attacker can forcefully revert a user's create Well transaction by deploying a Well for themselves using the user's `salt` value. Here are the steps of the attack:
 
@@ -915,20 +915,20 @@ Remove the `cloneDeterministic` feature, leaving the `clone` functionality only.
 
 ***
 
-## [[M-10] Transferout exclusive feeOnTransfer tokens will run out of well](https://github.com/code-423n4/2023-07-basin-findings/issues/108)
+## [[M-10] Transferout exclusive `feeOnTransfer` tokens will run out of well](https://github.com/code-423n4/2023-07-basin-findings/issues/108)
 *Submitted by [kutugu](https://github.com/code-423n4/2023-07-basin-findings/issues/108)*
 
 <https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L610> <br><https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L304> <br><https://github.com/code-423n4/2023-07-basin/blob/9403cf973e95ef7219622dbbe2a08396af90b64c/src/Well.sol#L370>
 
 ### Impact
 
-The well does not check the actual transferout amount and the k value, which for exclusive feeOnTransfer tokens causes the well to have a portion of the token fee cut out of air every time the token is transferred, which is not included in the transfer amount. Attackers can take advantage of this to run out of well.
+The well does not check the actual transferout amount and the k value, which for exclusive `feeOnTransfer` tokens causes the well to have a portion of the token fee cut out of air every time the token is transferred, which is not included in the transfer amount. Attackers can take advantage of this to run out of well.
 
 ### Proof of Concept
 
 The most common attack flow is through the skim function:
 
-1.  Attacker swaps to increase the price of exclusive feeOnTransfer token
+1.  Attacker swaps to increase the price of exclusive `feeOnTransfer` token
 2.  Attacker transfers token to well and skim. This will cut some of the well funds
 3.  Repeat the above process to reduce the number of well tokens to 1
 4.  Attacker calls sync and swap to pair token
@@ -967,7 +967,7 @@ Check the correct amount every time you transfer out.
 
 ***
 
-## [[M-11] addLiquidity Sandwich Attack for unbalanced token deposits](https://github.com/code-423n4/2023-07-basin-findings/issues/82)
+## [[M-11] `addLiquidity` Sandwich Attack for unbalanced token deposits](https://github.com/code-423n4/2023-07-basin-findings/issues/82)
 *Submitted by [Cosine](https://github.com/code-423n4/2023-07-basin-findings/issues/82)*
 
 <https://github.com/code-423n4/2023-07-basin/blob/c1b72d4e372a6246e0efbd57b47fb4cbb5d77062/src/Well.sol#L392-L399>
